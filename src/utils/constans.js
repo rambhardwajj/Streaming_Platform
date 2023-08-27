@@ -15,7 +15,7 @@ import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 export const logo = 'https://img.freepik.com/premium-vector/blue-r-logo-black-background_853558-5364.jpg';
 
 export const categories = [
-  { name: 'New', icon: <HomeIcon />, },
+  { name: 'All', icon: <HomeIcon />, },
   { name: 'Coding', icon: <CodeIcon />, },
   { name: 'Music', icon: <MusicNoteIcon /> },
   { name: 'Education', icon: <SchoolIcon />, },

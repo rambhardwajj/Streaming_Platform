@@ -9,8 +9,8 @@ const Navbar = () =>  (
 			<Link to="/" style={{ display :  'flex' }}>
 				<img src={logo}  height= {87} style={{ marginLeft: -30,  marginTop: -10,  marginBottom: -15}} />
 			</Link>
+			<SearchBar />
 			<div style={{ display: 'flex' }}>
-				<SearchBar />
 				<Link to="/Login">
 					<Button variant="outlined" style={{ color: '#00FFFF',  marginLeft: "-30px" ,marginRight:"8px",marginTop : "7px", width: 25}}>Login</Button>
 				</Link>

@@ -5,7 +5,7 @@ import {TopBar, Videos} from './'
 
 
 const Feed = () => {
-  const [ cat , setCat  ]  = useState("New")
+  const [ cat , setCat  ]  = useState("All")
 
   return (
     <div>
