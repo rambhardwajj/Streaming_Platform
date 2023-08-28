@@ -39,7 +39,7 @@ app.get('/user/me' , authenticationJWT, (req, res) => {
 })
 
 app.get('/user/signup', ( req, res)=>{
-	const { username , password} = req.body;
+	const { username , password, userImage} = req.body;
 	const user=  USERS.find( u => u.username === username );
 	if(user){
 		res.status(403).json({ message : "User already exists"});
@@ -52,7 +52,7 @@ app.get('/user/signup', ( req, res)=>{
 	}
 }); 
 
-app.post('/user/login', authenticationJWT,  (req, res) => {
+app.post('/user/login',  (req, res) => {
 	const {username , password} = req.headers;
 	const user= USERS.find( u => u.username === username  && u.password===password);
 
