@@ -1,10 +1,9 @@
 const express = require('express'); 
 const fs = require('fs');
-const jwt = require('jsonwebtokens');
+const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 const app  = express();
-
 app.use(cors());
 app.use(express.json());
 
@@ -51,9 +50,9 @@ app.get('/user/signup', ( req, res)=>{
 		const token = jwt.sign( { username, role: 'user' }, secretKey, { expiresIn: '1h' } );
 		res.json({ message: 'User created Successfully' , token });
 	}
-});
+}); 
 
-app.get('/user/login', authenticationJWT,  (req, res) => {
+app.post('/user/login', authenticationJWT,  (req, res) => {
 	const {username , password} = req.headers;
 	const user= USERS.find( u => u.username === username  && u.password===password);
 
@@ -64,3 +63,6 @@ app.get('/user/login', authenticationJWT,  (req, res) => {
 		res.sendStatus(404).json({message : "username doesnt exist"});
 	}
 });
+
+
+app.listen(3000, () => console.log('Server running on port 3000'));
