@@ -38,7 +38,7 @@ app.get('/user/me' , authenticationJWT, (req, res) => {
 	res.json({ username : req.user.username })
 })
 
-app.get('/user/signup', ( req, res)=>{
+app.post('/user/signup', ( req, res)=>{
 	const { username , password, userImage} = req.body;
 	const user=  USERS.find( u => u.username === username );
 	if(user){

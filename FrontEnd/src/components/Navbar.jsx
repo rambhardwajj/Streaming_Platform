@@ -4,7 +4,6 @@ import { Link} from 'react-router-dom'
 import { logo } from '../utils/constans'
 import SearchBar from './SearchBar'
 const Navbar = () =>  (
-	
 	<Stack direction= "row"  padding={2} alignItems="center"
 		style={{background: 'black' , top : 0, justifyContent : 'space-between' ,  position : 'sticky'   }}>
 			<Link to="/" style={{ display :  'flex' }}>
