@@ -34,8 +34,13 @@ const authenticationJWT = (req, res, next) =>{
 };
 
 // UserRoutes 
-app.get('/user/me' , authenticationJWT, (req, res) => {
-	res.json({ username : req.user.username })
+app.get('/user/me' , authenticationJWT, async (req, res) => {
+	// const user = await USERS.findOne({ username: req.user.username})
+	// if( !user){
+	// 	res.sendStatus(403).json( { msg : "User doesnt Exist"});
+	// 	return;
+	// }
+	res.json({ username : req.user.username });
 })
 
 app.post('/user/signup', ( req, res)=>{
