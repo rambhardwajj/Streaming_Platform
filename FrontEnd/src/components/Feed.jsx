@@ -15,7 +15,10 @@ const Feed = () => {
       // go to the fetchFromRapidApi funtion in the file and in that using axios we fetched the data and returned the data now 
       // fetchFromRapidApi function was a asynchronous function so we cann not just write
       // data = fetchFromRapidApi("dfs")  rather we have to use promises ie when the data is fetched return a promise and then pass the data [ .then(data) ]
-      fetchFromRapidApi(`search?part=snippet&q=${cat}` ).then((data)=> setVideos(data.items) )
+      fetchFromRapidApi(`search?part=snippet&q=${cat}` ).then((data)=> setVideos(data.items) ).catch((error) => {
+      // Handle any errors that occur during the fetch
+      console.error('Error fetching data:', error);
+    });
   }, [cat]);
 
 
