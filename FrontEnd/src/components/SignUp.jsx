@@ -45,7 +45,7 @@ const SignUp = () => {
 			<CardActions style={{ marginTop : -40}}>
 				<Button style={{ color : 'green' ,  marginLeft: 33 , marginRight: 33}} size= "large"  
 					onClick={ async () => {
-						const res=  await axios.post("http://localhost:3000/user/signup" , {
+						const res=  await axios.post("http://localhost:3001/user/signup" , {
 							username: email,
 							password: password, 
 							image :image

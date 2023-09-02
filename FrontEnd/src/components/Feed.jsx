@@ -2,10 +2,23 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Box, Typography, Stack } from '@mui/material'
 import {TopBar, Videos} from './'
+import { fetchFromRapidApi } from '../utils/fetchFromRapidApi'
 
 
 const Feed = () => {
-  const [ cat , setCat  ]  = useState("All")
+  
+  const [ cat , setCat  ]  = useState("All");
+
+  const [videos , setVideos] = useState([]);
+  
+  useEffect( ()=>{
+      // go to the fetchFromRapidApi funtion in the file and in that using axios we fetched the data and returned the data now 
+      // fetchFromRapidApi function was a asynchronous function so we cann not just write
+      // data = fetchFromRapidApi("dfs")  rather we have to use promises ie when the data is fetched return a promise and then pass the data [ .then(data) ]
+      fetchFromRapidApi(`search?part=snippet&q=${cat}` ).then((data)=> setVideos(data.items) )
+  }, [cat]);
+
+
 
   return (
     <div>
@@ -20,7 +33,10 @@ const Feed = () => {
             </Typography>
         </Box>
 
-        <Videos videos={[]} /> 
+        {/* now after fetching the videos data from rapidapi and calling the function in the useEffect hook 
+        and also using use state parsing the data recieved to use current state in the videos - 
+        just render the Videos component and pass the data recieved as props in the Videos Components */}
+        <Videos videos={videos} /> 
     </div>
   )
 }

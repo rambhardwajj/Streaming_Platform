@@ -19,7 +19,7 @@ const Login = () => {
 				</div>
 			</CardContent>
 			<CardActions>
-				<Button size="small"> forgot password</Button>
+				<Button size="small"> Sign in</Button>
 				<Button size="small"> newUser? Create new Account </Button>
 			</CardActions>
    		</Card>
