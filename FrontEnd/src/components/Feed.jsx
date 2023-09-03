@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react'
 import { Box, Typography, Stack } from '@mui/material'
 import {TopBar, Videos} from './'
 import { fetchFromRapidApi } from '../utils/fetchFromRapidApi'
-
+import SideBar from './SideBar'
 
 const Feed = () => {
   
   const [ cat , setCat  ]  = useState("All");
-
   const [videos , setVideos] = useState([]);
   
   useEffect( ()=>{
@@ -31,10 +30,12 @@ const Feed = () => {
         </Box>
       </Stack>
         <Box p={2} pl={6} sx={{ overflowY: 'auto', height: '90vh'  }} >
-            <Typography variant='h4' mb={4} fontWeight="bold" color={'#F0F8FF'}> {cat} 
+            <Typography style={{display : 'flex', justifyContent: 'center'}} variant='h4' mb={4} fontWeight="bold" color={'#F0F8FF'}> 
+                {cat} 
                 <span style={{ color: '#00FFFF' }}> Videos </span>
             </Typography>
         </Box>
+        <SideBar />
 
         {/* now after fetching the videos data from rapidapi and calling the function in the useEffect hook 
         and also using use state parsing the data recieved to use current state in the videos - 
