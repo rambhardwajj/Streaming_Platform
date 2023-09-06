@@ -1,8 +1,6 @@
 import React from 'react'
 import { Stack , Box, Typography} from '@mui/material'
 import { categories } from '../utils/constans'
-import { Category } from '@mui/icons-material'
-import { blueGrey, lightBlue } from '@mui/material/colors';
 
 const TopBar = ( { cat , setCat } ) =>  (
 	<div style={{ padding: 10}} >

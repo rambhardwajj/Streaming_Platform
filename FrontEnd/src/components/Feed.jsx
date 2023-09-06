@@ -20,8 +20,6 @@ const Feed = () => {
     });
   }, [cat]);
 
-
-
   return (
     <div>
       <Stack sx={{ flexDirection : { sx : "column", md: "column" }}}>
@@ -29,18 +27,21 @@ const Feed = () => {
             <TopBar cat = {cat} setCat={setCat} /> 
         </Box>
       </Stack>
-        <Box p={2} pl={6} sx={{ overflowY: 'auto', height: '90vh'  }} >
-            <Typography style={{display : 'flex', justifyContent: 'center'}} variant='h4' mb={4} fontWeight="bold" color={'#F0F8FF'}> 
+      <Stack>
+        <Box p={1} pl={6} sx={{ height: '2vh'  }} >
+            <Typography style={{display : 'flex', justifyContent: 'center'}} gap={1} variant='h4' mb={4} fontWeight="bold" color={'#F0F8FF'}> 
                 {cat} 
-                <span style={{ color: '#00FFFF' }}> Videos </span>
+                <span style={{ color: '#00FFFF' }}> Videos  </span>
             </Typography>
         </Box>
-        <SideBar />
-
-        {/* now after fetching the videos data from rapidapi and calling the function in the useEffect hook 
-        and also using use state parsing the data recieved to use current state in the videos - 
-        just render the Videos component and pass the data recieved as props in the Videos Components */}
-        <Videos videos={videos} /> 
+      </Stack>
+      <Stack direction="row" >
+          <SideBar />
+          {/* now after fetching the videos data from rapidapi and calling the function in the useEffect hook 
+          and also using use state parsing the data recieved to use current state in the videos - 
+          just render the Videos component and pass the data recieved as props in the Videos Components */}
+          <Videos videos={videos} /> 
+      </Stack>
     </div>
   )
 }
