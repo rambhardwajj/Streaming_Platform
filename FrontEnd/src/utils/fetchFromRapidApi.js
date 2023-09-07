@@ -15,9 +15,25 @@ const options = {
 	}
   }; 
 
+//   const opt = {
+// 	params: {
+// 		maxResults: '50'
+// 	},
+// 	headers: {
+// 		'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY_CHANNEL , 
+// 		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+// 	}
+//   }
+
   // Make the Component and start with the axios request 
   export const fetchFromRapidApi = async ( url ) => {
 	// fetching the data by passing our base url and the custom url we take as props in the component from the other components 
 	const {data} = await axios.get( `${BaseUrl}/${url}`, options );
 	return data;
   }
+
+//   export const fetchFromRapidApiChannel = async ( url ) => {
+// 	// fetching the data by passing our base url and the custom url we take as props in the component from the other components 
+// 	const {data} = await axios.get( `${BaseUrl}/${url}`, opt );
+// 	return data;
+//   }

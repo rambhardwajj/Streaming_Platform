@@ -6,7 +6,7 @@ import Subscription from './Subscription'
 const SideBar = ( {subsChannel, setSubsChannel} ) =>  {
   return (
 		<div >
-			<p style={{ color:'white' , display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>  Subscriptions </p>
+			<h2 style={{ fontFamily: "Cooper Black" , display: 'flex', justifyContent: 'space-around', alignItems: 'center' , color:"#F0EAD6" }}>  Subscriptions </h2>
 			<Stack direction= "row"  style={{ display : 'flex', justifyContent: 'space-around', alignItems: 'center',  minWidth:200 }} color="white"  >
 				<div>
 					<Subscription  subsChannel={subsChannel} setSubsChannel={setSubsChannel} />
