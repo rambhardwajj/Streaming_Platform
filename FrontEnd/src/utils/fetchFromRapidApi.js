@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const BaseUrl= 'https://youtube-v31.p.rapidapi.com'
 
-
 // These are the headers and the obj that we pass in the axios request 
 const options = {
 	params: {

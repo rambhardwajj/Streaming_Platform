@@ -1,14 +1,15 @@
 import React from 'react'
 import { Button , Stack } from '@mui/material'
-import { subs } from '../utils/side'
+import Subscription from './Subscription'
 
 
-const SideBar = () => {
+const SideBar = ( {subsChannel, setSubsChannel} ) =>  {
   return (
 		<div >
-			<Stack  style={{ minWidth:200 }} color="white" direction="column"  >
+			<p style={{ color:'white' , display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>  Subscriptions </p>
+			<Stack direction= "row"  style={{ display : 'flex', justifyContent: 'space-around', alignItems: 'center',  minWidth:200 }} color="white"  >
 				<div>
-				   Subs
+					<Subscription  subsChannel={subsChannel} setSubsChannel={setSubsChannel} />
 				</div>
 			</Stack>
 		</div>

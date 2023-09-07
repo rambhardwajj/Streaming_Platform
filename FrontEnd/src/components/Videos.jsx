@@ -13,7 +13,6 @@ const Videos = ({videos} ) =>  {
 					</Box>
 				)) }
 			</Stack>
-
 		</div>
 	)
 }

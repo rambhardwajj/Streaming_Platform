@@ -21,7 +21,7 @@ const VideoCard = ( { video : {id:{videoId}, snippet }}) => {
           </CardActionArea>  
 
           <CardActionArea>
-            <CardContent sx={{ backgroundColor: "#1E1E1E", height: '70px' }}>
+            <CardContent sx={{ backgroundColor: "#1E1E1E", height: '90px' }}>
               <Link to={videoId ? `/video/${videoId}` : demoVideoUrl } >
                 <Typography variant="subtitle1" fontFamily="Arial" fontWeight="bold" color="white">
                   {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
@@ -31,15 +31,15 @@ const VideoCard = ( { video : {id:{videoId}, snippet }}) => {
                 <Typography variant="subtitle2" color="grey">
                   {snippet?.channelTitle || demoChannelTitle}
                   <CheckCircleIcon sx={{ fontSize: "15px", color: "cyan", ml: "5px" }} />
-                </Typography>
+                </Typography> 
               </Link>
             </CardContent>
-          </CardActionArea>
+          </CardActionArea> 
           <CardActions  style={{ backgroundColor: "#1E1E1E" }}>
               {/* // Chat Gpt add the functionality to the button that if I click on the button the current video link gets copy to keyboard  */}
             <Button style={{  backgroundColor: "#1E1E1E" }} size="small" color="primary"
                      onClick={ ()=>{} } >
-                 share
+                 Subscribe
             </Button>
           </CardActions>
         </Card>
