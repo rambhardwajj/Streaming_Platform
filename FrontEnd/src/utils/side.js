@@ -1,5 +1,5 @@
 export const subs = [
-	{ name: 'Anderson' },
+	{ name: 'YouTube' },
 	{ name: 'Mzade'  },
 	{ name: 'Dababy'  },
 	{ name: 'Taylor Swift'  },

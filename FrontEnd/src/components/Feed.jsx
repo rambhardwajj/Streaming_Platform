@@ -37,7 +37,7 @@ const Feed = () => {
         </Box>
       </Stack>
       <Stack>
-        <Box p={1} pl={6} sx={{ height: '2vh'  }} >
+        <Box p={1} pb={2} pl={20} sx={{ height: '2vh'  }} >
             <Typography style={{display : 'flex', justifyContent: 'center'}} gap={1} variant='h4' mb={4} fontWeight="bold" color={'#F0F8FF'}> 
                 {cat} 
                 <span style={{ color: '#00FFFF' }}> Videos  </span>
