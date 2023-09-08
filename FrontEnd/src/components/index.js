@@ -10,3 +10,4 @@ export { default as TopBar} from './TopBar'
 export { default as Videos } from './Videos';
 export { default as Login } from './Login';
 export { default as SignUp } from './SignUp';
+export { default as UserProfile } from './UserProfile';

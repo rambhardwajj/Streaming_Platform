@@ -6,11 +6,14 @@ import SearchBar from './SearchBar'
 import {  useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import { red } from '@mui/material/colors'
 
 
 function Navbar ()  {
 
 	const [ email, setEmail ] = useState("");
+	const [ userImage , setImage] = useState("https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg");
+
 	useEffect( ()=>{
 		const getData = async () =>{
 			
@@ -27,6 +30,10 @@ function Navbar ()  {
 					console.log( data.username);
 					setEmail(data.username);
 				}
+				if( data.userImage){
+					console.log( data.userImage);
+					setImage(data.userImage);
+				}
 
 			} catch (error) {
 				console.error("Axios error:", error);
@@ -35,6 +42,7 @@ function Navbar ()  {
 		getData();
 	} , [] );
 
+	
 	if(email){
 		return (
 		<div>
@@ -44,7 +52,12 @@ function Navbar ()  {
 						<img src={logo}  height= {87} style={{ marginLeft: -30,  marginTop: -10,  marginBottom: -15}} />
 					</Link>
 					<SearchBar />
-					<div style={{ display: 'flex' }}>
+
+					<div style={{gap: 50,  display: 'flex', flexDirection: 'row' , justifyContent: 'space-around'}}>
+						<Link style={{  }} to="/user/me" >
+						{/* // how to add dynamic image address in this  */}
+						<img  style={{ paddingTop: 10,  maxWidth: 40}} src={userImage} alt="User Profile" />
+						</Link>
 						<Button variant="outlined" 
 							style={{ color: '#00FFFF',  marginLeft: "-30px" ,marginRight:"8px",marginTop : "7px", width: 25}} 
 							onClick={()=>{
@@ -54,6 +67,7 @@ function Navbar ()  {
 						
 						>LogOut</Button>
 					</div>
+					
 			</Stack>
 		</div>
 		)
