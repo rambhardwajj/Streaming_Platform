@@ -45,14 +45,14 @@ const Feed = () => {
         </Box>
       </Stack>
       <Stack direction="row" >
-
-          
+      
           <SideBar subsChannel= {subsChannel} setSubsChannel={setSubsChannel} />
 
           {/* now after fetching the videos data from rapidapi and calling the function in the useEffect hook 
           and also using use state parsing the data recieved to use current state in the videos - 
           just render the Videos component and pass the data recieved as props in the Videos Components */}
           <Videos videos={videos} /> 
+
       </Stack>
     </div>
   )
