@@ -1,12 +1,11 @@
 import React from 'react'
-import { Stack , Button } from '@mui/material'
+import { Stack , Button , Typography} from '@mui/material'
 import { Link} from 'react-router-dom'
 import { logo } from '../utils/constans'
 import SearchBar from './SearchBar'
 import {  useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
-import { red } from '@mui/material/colors'
 
 
 function Navbar ()  {
@@ -24,7 +23,10 @@ function Navbar ()  {
 						"Authorization": "Bearer " + localStorage.getItem("token")
 					}
 				});
+
+				console.log(res);
 				const data = res.data;
+				console.log("inside navbar");
 				console.log(data);
 				if( data.username){
 					console.log( data.username);
@@ -33,6 +35,8 @@ function Navbar ()  {
 				if( data.userImage){
 					console.log( data.userImage);
 					setImage(data.userImage);
+				}else{
+					console.log("userImage doesnt Exist");// debugging
 				}
 
 			} catch (error) {
@@ -50,13 +54,16 @@ function Navbar ()  {
 				style={{background: 'black' , top : 0, justifyContent : 'space-between' ,  position : 'sticky'   }}>
 					<Link to="/" style={{ display :  'flex' }}>
 						<img src={logo}  height= {87} style={{ marginLeft: -30,  marginTop: -10,  marginBottom: -15}} />
+						
 					</Link>
-					<SearchBar />
+					
+					<SearchBar  />
 
 					<div style={{gap: 50,  display: 'flex', flexDirection: 'row' , justifyContent: 'space-around'}}>
+						<Typography  fontFamily="Arial" style={{ marginTop: 18, marginRight: -40,  color: 'lightGreen'}}> Welcome {email} </Typography>
 						<Link style={{  }} to="/user/me" >
-						{/* // how to add dynamic image address in this  */}
-						<img  style={{ paddingTop: 10,  maxWidth: 40}} src={userImage} alt="User Profile" />
+							{/* // how to add dynamic image address in this  */}
+							<img  style={{ paddingTop: 10,  maxWidth: 40}} src={userImage} alt="User Profile" />
 						</Link>
 						<Button variant="outlined" 
 							style={{ color: '#00FFFF',  marginLeft: "-30px" ,marginRight:"8px",marginTop : "7px", width: 25}} 
