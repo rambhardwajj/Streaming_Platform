@@ -54,7 +54,6 @@ function Navbar ()  {
 				style={{background: 'black' , top : 0, justifyContent : 'space-between' ,  position : 'sticky'   }}>
 					<Link to="/" style={{ display :  'flex' }}>
 						<img src={logo}  height= {87} style={{ marginLeft: -30,  marginTop: -10,  marginBottom: -15}} />
-						
 					</Link>
 					
 					<SearchBar  />
