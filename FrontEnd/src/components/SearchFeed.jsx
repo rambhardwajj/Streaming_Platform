@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Box, Typography, Stack } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import {  Videos} from './'
 import { fetchFromRapidApi } from '../utils/fetchFromRapidApi'
 import { useParams } from 'react-router-dom'
