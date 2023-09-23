@@ -9,7 +9,7 @@ const Videos = ({videos} ) =>  {
 			<Stack marginLeft={4} marginRight={0} marginTop={5} direction="row" flexWrap="wrap"  justifyContent="start" gap={2} >
 				{ videos.map((item, idx) => (
 					<Box key={idx}>
-						{item.id.videoId && <VideoCard video ={item} /> }
+						{item.id.videoId && <VideoCard video ={ item } /> }
 					</Box>
 				)) }
 			</Stack>
