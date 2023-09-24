@@ -6,13 +6,16 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import  { useState } from 'react';
 
 
-const VideoCard = ( { video : {id:{videoId}, snippet }}) => {
+const VideoCard = ({ video }) => {
+  const videoId = video?.id?.videoId;
+  const snippet = video?.snippet;
+  console.log(videoId);
   return (
 	    <div >
         <Card sx={{ width: { xs: '100%', sm: '350px', md: "350px", }  }} >
           <CardActionArea>
             {/* // if videoId exist go to the respecive url else go to the demo url  */}
-            <Link to={ videoId ? `/video/${videoId}`: demoVideoUrl }>
+            <Link to={ videoId ? `/video/${videoId}`: `/video/cV2gBU6hKfY` }>
               <CardMedia 
                   style={{ height: 190, width: 350}}
                   image={snippet?.thumbnails?.high?.url}  alt={snippet?.title}
@@ -21,8 +24,8 @@ const VideoCard = ( { video : {id:{videoId}, snippet }}) => {
           </CardActionArea>  
 
           <CardActionArea>
-            <CardContent sx={{ backgroundColor: "#1E1E1E", height: '70px' }}>
-              <Link to={videoId ? `/video/${videoId}` : demoVideoUrl } >
+            <CardContent sx={{ backgroundColor: "#1E1E1E", height: '90px' }}>
+              <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY` } >
                 <Typography variant="subtitle1" fontFamily="Arial" fontWeight="bold" color="white">
                   {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
                 </Typography>
@@ -31,15 +34,15 @@ const VideoCard = ( { video : {id:{videoId}, snippet }}) => {
                 <Typography variant="subtitle2" color="grey">
                   {snippet?.channelTitle || demoChannelTitle}
                   <CheckCircleIcon sx={{ fontSize: "15px", color: "cyan", ml: "5px" }} />
-                </Typography>
+                </Typography> 
               </Link>
             </CardContent>
-          </CardActionArea>
+          </CardActionArea> 
           <CardActions  style={{ backgroundColor: "#1E1E1E" }}>
               {/* // Chat Gpt add the functionality to the button that if I click on the button the current video link gets copy to keyboard  */}
             <Button style={{  backgroundColor: "#1E1E1E" }} size="small" color="primary"
                      onClick={ ()=>{} } >
-                 share
+                 Subscribe
             </Button>
           </CardActions>
         </Card>

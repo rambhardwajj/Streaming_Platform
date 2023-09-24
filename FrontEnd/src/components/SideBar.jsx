@@ -1,13 +1,18 @@
 import React from 'react'
-import { Button } from '@mui/material'
-import { grey } from '@mui/material/colors'
+import { Button , Stack } from '@mui/material'
+import Subscription from './Subscription'
 
-const SideBar = () => {
+
+const SideBar = ( {subsChannel, setSubsChannel} ) =>  {
   return (
-	<div style={{  position:'relative', zIndex:1,  marginTop: -600 , color: 'white', marginLeft: 60 }}>
-		<Button  style={{ fontSize:20,  color: "grey"}}> ||| </Button> <br />
-		Subscription
-	</div>
+		<div style={{ borderRadius: 10, marginLeft: 20, marginTop:30,  backgroundColor: "#0E0E0E" }}>
+			<h2 style={{  fontFamily: "Arial" , display: 'flex', justifyContent: 'space-around', alignItems: 'center' , color: 'lightgrey' }}> Channels </h2>
+			<Stack direction= "row"  style={{ display : 'flex', justifyContent: 'space-around', alignItems: 'center',  minWidth:200 }} color="white"  >
+				<div>
+					<Subscription  subsChannel={subsChannel} setSubsChannel={setSubsChannel} />
+				</div>
+			</Stack>
+		</div>
   )
 }
 

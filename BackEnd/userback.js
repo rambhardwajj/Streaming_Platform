@@ -40,7 +40,7 @@ app.get('/user/me' , authenticationJWT, async (req, res) => {
 	// 	res.sendStatus(403).json( { msg : "User doesnt Exist"});
 	// 	return;
 	// }
-	res.json({ username : req.user.username });
+	res.json({ username : req.user.username , userImage: req.user.userImage });
 })
 
 app.post('/user/signup', ( req, res)=>{
@@ -58,16 +58,16 @@ app.post('/user/signup', ( req, res)=>{
 }); 
 
 app.post('/user/login',  (req, res) => {
-	const {username , password} = req.headers;
-	const user= USERS.find( u => u.username === username  && u.password===password);
+	const {username , password} = req.body;
+	const user= USERS.find( u => u.username === username && u.password===password);
 
 	if( user){
 		const token = jwt.sign({ username , role : 'user' }, secretKey, {expiresIn : '1h'});
 		res.json({ message : "Logged In ", token});
-	}else{
-		res.sendStatus(404).json({message : "username doesnt exist"});
+	}
+	else{
+		res.sendStatus(401).json({message : "username doesnt exist"});
 	}
 });
-
 
 app.listen(3001, () => console.log('Server running on port 3001'));

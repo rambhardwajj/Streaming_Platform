@@ -1,12 +1,10 @@
 import React from 'react'
-import { Stack , Box, Typography} from '@mui/material'
+import { Stack } from '@mui/material'
 import { categories } from '../utils/constans'
-import { Category } from '@mui/icons-material'
-import { blueGrey, lightBlue } from '@mui/material/colors';
 
 const TopBar = ( { cat , setCat } ) =>  (
 	<div style={{ padding: 10}} >
-		<Stack  direction= "row" sx={{    overflow: "auto",  height: { sx:'auto', md: '15%' } , flexDirection: { md: 'row'}  }} >
+		<Stack  direction= "row" sx={{ overflow: "auto",  height: { sx:'auto', md: '15%' } , flexDirection: { md: 'row'}  }} >
 			{categories.map((category)=> (
 				<button className="category-btn"  
 						onClick={()=> setCat(category.name) }

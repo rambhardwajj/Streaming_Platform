@@ -8,7 +8,7 @@ import { Link} from 'react-router-dom'
 const SignUp = () => {
 	const [ email, setEmail] = useState("");
 	const [ password, setPassword] = useState(""); 
-	const [ image, setImage] = useState(""); 
+	const [ userImage, setImage] = useState(""); 
 
   return (
 	<div style={{  marginTop: 10, marginRight: 50,   display: 'flex' , justifyContent: 'space-around' , alignItems: 'center'}}> 
@@ -48,14 +48,14 @@ const SignUp = () => {
 						const res=  await axios.post("http://localhost:3001/user/signup" , {
 							username: email,
 							password: password, 
-							image :image
+							userImage :userImage
 						})
 						const data = res.data;
 						console.log(data);
 						localStorage.setItem("token", data.token );
 						window.location = "/"
 					}}
-				 >Create account</Button>
+				> Create account</Button>
 				<Link to="/Login"> <Button size="small">already have an account</Button></Link>
 			</CardActions>
    		</Card>
